@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import scr.sxr.core.XmlSerializer
+import sxr.core.XmlSerializer
 
 import static org.junit.jupiter.api.Assertions.assertEquals
 
