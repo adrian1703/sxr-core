@@ -10,21 +10,21 @@ class XmlInvoiceFactoryTest extends Specification {
         xmlInvoiceFactory = new XmlInvoiceFactory()
     }
 
-    def "CreateInvoice"() {
+    def deserializeInvoice() {
         given:
         def input = "not needed yet"
         when:
-        def result = xmlInvoiceFactory.createInvoice(input)
+        def result = xmlInvoiceFactory.deserializeInvoice(input)
         then:
         assert result instanceof Invoice
 
     }
 
-    def "CreateInvoice2"() {
+    def deserializeInvoice2() {
         given:
         def input = "not needed yet"
         when:
-        def result = xmlInvoiceFactory.createInvoice(input)
+        def result = xmlInvoiceFactory.deserializeInvoice(input)
         then:
         assert result instanceof Invoice
 

@@ -2,7 +2,9 @@ package sxr.core;
 
 import sxr.model.entities.Invoice;
 
-public interface InvoiceFactory {
+public interface InvoiceFactory<T> {
 
-    Invoice createInvoice(Object input);
+    Invoice deserializeInvoice(T input);
+
+    T serializeInvoice(Invoice input);
 }
