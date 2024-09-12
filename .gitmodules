@@ -1,3 +1,6 @@
 [submodule "sxr-javamodel"]
 	path = sxr-javamodel
 	url = git@github.com:adrian1703/sxr-javamodel.git
+[submodule "xrechnung-testsuite"]
+	path = xrechnung-testsuite
+	url = git@github.com:itplr-kosit/xrechnung-testsuite.git
