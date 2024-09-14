@@ -1,6 +1,11 @@
 plugins {
     id 'groovy'
 }
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
 
 group = 'adrian.sxr'
 version = '1.0-SNAPSHOT'
@@ -11,6 +16,10 @@ repositories {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+}
+
+jar {
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
 }
 
 sourceSets {
@@ -24,18 +33,19 @@ sourceSets {
     }
 }
 
+
 dependencies {
     // Groovy dependency
-    implementation 'org.apache.groovy:groovy:4.0.14'
+    implementation 'org.apache.groovy:groovy-all:4.0.23'
 
     //junit
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+//    testImplementation platform('org.junit:junit-bom:5.10.0')
+//    testImplementation 'org.junit.jupiter:junit-jupiter'
 
     // Spock dependencies
     testImplementation platform('org.spockframework:spock-bom:2.3-groovy-4.0')
     testImplementation 'org.spockframework:spock-core'  // Core Spock framework
-    testImplementation 'org.spockframework:spock-junit4'  // Only needed if you're using JUnit 4 integration
+//    testImplementation 'org.spockframework:spock-junit4'  // Only needed if you're using JUnit 4 integration
 
     // Optional: If you want to use Spock's mock objects or need other advanced features, add more dependencies
     // testImplementation 'cglib:cglib:3.3.0'  // Spock uses CGLib for dynamic proxies (optional)
