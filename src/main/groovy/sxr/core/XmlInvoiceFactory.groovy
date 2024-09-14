@@ -1,6 +1,7 @@
 package sxr.core
 
-import sxr.model.entities.Invoice
+import sxr.model.entities.invoice.Invoice
+
 
 class XmlInvoiceFactory implements InvoiceFactory<String>{
     @Override

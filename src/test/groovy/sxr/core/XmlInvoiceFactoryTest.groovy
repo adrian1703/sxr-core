@@ -1,7 +1,7 @@
 package sxr.core
 
 import spock.lang.Specification
-import sxr.model.entities.Invoice
+import sxr.model.entities.invoice.Invoice
 
 class XmlInvoiceFactoryTest extends Specification {
     XmlInvoiceFactory xmlInvoiceFactory
