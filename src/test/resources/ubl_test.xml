@@ -1,0 +1,51 @@
+<ubl:Invoice xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+    <cbc:CustomizationID>
+        urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0#conformant#urn:xeinkauf.de:kosit:extension:xrechnung_3.0
+    </cbc:CustomizationID>
+    <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
+    <cbc:ID>12345</cbc:ID>
+    <cbc:IssueDate>2019-05-15</cbc:IssueDate>
+    <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+    <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+    <cbc:BuyerReference>12345678-12345-83</cbc:BuyerReference>
+    <cac:InvoicePeriod>
+        <cbc:StartDate>2019-02-01</cbc:StartDate>
+        <cbc:EndDate>2019-05-07</cbc:EndDate>
+    </cac:InvoicePeriod>
+    <cac:OrderReference>
+        <cbc:ID>123</cbc:ID>
+    </cac:OrderReference>
+    <cac:AccountingSupplierParty>
+        <cac:Party>
+            <cbc:EndpointID schemeID="EM">seller@email.de</cbc:EndpointID>
+            <cac:PartyName>
+                <cbc:Name>M. Meier</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:StreetName>Hauptstraße 2</cbc:StreetName>
+                <cbc:CityName>Musterstadt</cbc:CityName>
+                <cbc:PostalZone>12345</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode>DE</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:PartyTaxScheme>
+                <cbc:CompanyID>DE/12/345/67890</cbc:CompanyID>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:PartyTaxScheme>
+            <cac:PartyLegalEntity>
+                <cbc:RegistrationName>M. Meier Handwerk GbR</cbc:RegistrationName>
+                <cbc:CompanyID>1122334455</cbc:CompanyID>
+            </cac:PartyLegalEntity>
+            <cac:Contact>
+                <cbc:Name>M. Meier Handwerk GbR</cbc:Name>
+                <cbc:Telephone>010/12345</cbc:Telephone>
+                <cbc:ElectronicMail>info@m-meier.de</cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:Party>
+    </cac:AccountingSupplierParty>
+</ubl:Invoice>
