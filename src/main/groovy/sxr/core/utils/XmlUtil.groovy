@@ -37,7 +37,7 @@ class XmlUtil {
         return termPath.reversed() as List<QName>
     }
 
-    SxrObject parseNodeToSxrObject(Node node) {
+    static SxrObject parseNodeToSxrObject(Node node) {
         return null
     }
 
