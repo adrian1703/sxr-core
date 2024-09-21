@@ -1,5 +1,6 @@
 package sxr.core.utils
 
+import groovy.namespace.QName
 import groovy.xml.XmlParser
 import sxr.model.entities.SxrObject
 
@@ -13,20 +14,31 @@ class XmlUtil {
         return Singleton
     }
 
-    Node parseFileToNode(String path) {
+    static Node parseFileToNode(String path) {
         def file = new File(path)
-        return xmlParser.parse(file)
+        return Instance().xmlParser.parse(file)
     }
 
-    Node parseTextToNode(String text) {
-        return xmlParser.parseText(text)
+    static Node parseTextToNode(String text) {
+        return Instance().xmlParser.parseText(text)
     }
 
     static String parseNodeToText(Node node) {
         return groovy.xml.XmlUtil.serialize(node)
     }
 
+    static List<QName> getXmlTermPath(Node node) {
+        List termPath = [node.name()]
+        Node current  = node
+        while (current.parent() != null) {
+            current = current.parent()
+            termPath << current.name()
+        }
+        return termPath.reversed() as List<QName>
+    }
+
     SxrObject parseNodeToSxrObject(Node node) {
 
     }
+
 }

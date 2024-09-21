@@ -1,18 +1,12 @@
-package sxr.core
+package sxr.core.utils
 
 import groovy.namespace.QName
 import spock.lang.Specification
-import sxr.model.entities.invoice.Invoice
+import sxr.core.InvoiceNamespace
 import test.ResourcesUtil
 
-class XmlInvoiceFactoryTest extends Specification {
-    XmlInvoiceFactory xmlInvoiceFactory
-    XmlUtil xmlUtil
+class XmlUtilTest extends Specification {
 
-    void setup() {
-        xmlInvoiceFactory = new XmlInvoiceFactory()
-        xmlUtil = new XmlUtil()
-    }
     def "getPrefix"() {
         given:
         String uri = inputUri
@@ -36,9 +30,9 @@ class XmlInvoiceFactoryTest extends Specification {
         List<String> termPathExpected = termPathExpectedInput as List<String>
         when:
         String xml = ResourcesUtil.readTextFilesFromResources(pathToTestXml)
-        Node node = xmlUtil.parseTextToNode(xml)
+        Node node = XmlUtil.parseTextToNode(xml)
         node = node.'**'.find { it.name() == nodeName } as Node
-        List<QName> termPath     = xmlInvoiceFactory.getXmlTermPath(node)
+        List<QName> termPath     = XmlUtil.getXmlTermPath(node)
         List<String> prefixNames = InvoiceNamespace.qNameToPrefixAndName(termPath)
         then:
         assert termPath.size() == termPathExpected.size()
