@@ -1,7 +1,7 @@
-package sxr.core.readers.directors.invoice
+package sxr.core.transform.readers.invoice
 
-import sxr.core.readers.directors.AbstractReader
-import sxr.core.readers.directors.AbstractReaderImpl
+import sxr.core.transform.readers.AbstractReader
+import sxr.core.transform.readers.AbstractReaderImpl
 
 class InvoiceBtReader extends AbstractReaderImpl<Map, Map>{
     @Override

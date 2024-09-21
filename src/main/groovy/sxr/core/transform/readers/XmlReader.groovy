@@ -1,4 +1,4 @@
-package sxr.core.readers.directors
+package sxr.core.transform.readers
 
 
 import sxr.core.utils.XmlUtil

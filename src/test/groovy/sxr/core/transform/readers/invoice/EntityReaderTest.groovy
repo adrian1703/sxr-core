@@ -1,8 +1,8 @@
-package sxr.core.readers.directors.invoice
+package sxr.core.transform.readers.invoice
 
 import spock.lang.Specification
-import sxr.core.readers.directors.AbstractReader
-import sxr.core.readers.directors.EntityReader
+import sxr.core.transform.readers.AbstractReader
+import sxr.core.transform.readers.EntityReader
 import sxr.model.entities.SxrObject
 import sxr.model.entities.invoice.*
 

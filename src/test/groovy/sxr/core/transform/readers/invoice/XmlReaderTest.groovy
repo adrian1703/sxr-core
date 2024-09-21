@@ -1,9 +1,9 @@
-package sxr.core.readers.directors.invoice
+package sxr.core.transform.readers.invoice
 
 import groovy.namespace.QName
 import spock.lang.Specification
-import sxr.core.readers.directors.AbstractReader
-import sxr.core.readers.directors.XmlReader
+import sxr.core.transform.readers.AbstractReader
+import sxr.core.transform.readers.XmlReader
 import test.ResourcesUtil
 
 import static test.ResourcesUtil.readTextFilesFromResources

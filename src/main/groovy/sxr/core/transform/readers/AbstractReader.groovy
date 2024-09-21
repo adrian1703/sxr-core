@@ -1,6 +1,6 @@
-package sxr.core.readers.directors
+package sxr.core.transform.readers
 
-import sxr.core.readers.builders.AbstractTransformBuilder
+import sxr.core.transform.builders.AbstractTransformBuilder
 
 /**
  * Director class (Builder pattern) for doing an object transformation

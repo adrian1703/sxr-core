@@ -1,6 +1,6 @@
-package sxr.core.readers.builders.invoice
+package sxr.core.transform.builders.invoice
 
-import sxr.core.readers.builders.AbstractTransformBuilder
+import sxr.core.transform.builders.AbstractTransformBuilder
 import sxr.model.entities.SxrObject
 
 class InvoiceEntity2XmlBuilder implements AbstractTransformBuilder<SxrObject, Map>{
