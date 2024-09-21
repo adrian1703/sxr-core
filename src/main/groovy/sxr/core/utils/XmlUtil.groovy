@@ -1,11 +1,17 @@
-package sxr.core
+package sxr.core.utils
 
 import groovy.xml.XmlParser
 import sxr.model.entities.SxrObject
 
 class XmlUtil {
+    static XmlUtil   Singleton
+           XmlParser xmlParser = new XmlParser()
 
-    XmlParser xmlParser = new XmlParser()
+    static XmlUtil Instance() {
+        if (Singleton == null)
+            Singleton = new XmlUtil()
+        return Singleton
+    }
 
     Node parseFileToNode(String path) {
         def file = new File(path)
