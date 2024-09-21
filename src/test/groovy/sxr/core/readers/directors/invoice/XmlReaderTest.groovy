@@ -3,16 +3,17 @@ package sxr.core.readers.directors.invoice
 import groovy.namespace.QName
 import spock.lang.Specification
 import sxr.core.readers.directors.AbstractReader
+import sxr.core.readers.directors.XmlReader
 import test.ResourcesUtil
 
 import static test.ResourcesUtil.readTextFilesFromResources
 
-class InvoiceXmlReaderTest extends Specification {
+class XmlReaderTest extends Specification {
     AbstractReader<String,Node> reader
     ResourcesUtil resourcesUtil
 
     void setup() {
-        reader        = new InvoiceXmlReader()
+        reader        = new XmlReader()
         resourcesUtil = new ResourcesUtil()
     }
 

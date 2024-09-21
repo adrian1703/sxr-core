@@ -2,14 +2,15 @@ package sxr.core.readers.directors.invoice
 
 import spock.lang.Specification
 import sxr.core.readers.directors.AbstractReader
+import sxr.core.readers.directors.EntityReader
 import sxr.model.entities.SxrObject
 import sxr.model.entities.invoice.*
 
-class InvoiceEntityReaderTest extends Specification {
-    AbstractReader<Invoice, SxrObject> reader
+class EntityReaderTest extends Specification {
+    AbstractReader<SxrObject, SxrObject> reader
 
     void setup() {
-        reader = new InvoiceEntityReader()
+        reader = new EntityReader()
     }
 
     def "CreatePartsBasic"() {

@@ -1,27 +1,25 @@
-package sxr.core.readers.directors.invoice
+package sxr.core.readers.directors
 
-import sxr.core.readers.directors.AbstractReader
-import sxr.core.readers.directors.AbstractReaderImpl
+
 import sxr.core.utils.reflection.SxrObjectUtil
 import sxr.model.entities.SxrObject
-import sxr.model.entities.invoice.Invoice
 
 import java.lang.reflect.Field
 
-class InvoiceEntityReader extends AbstractReaderImpl<Invoice, SxrObject> {
-    Invoice            invoice
-    List<SxrObject>    parts
+class EntityReader extends AbstractReaderImpl<SxrObject, SxrObject> {
+    SxrObject       root
+    List<SxrObject> parts
 
     @Override
-    AbstractReader setSrcObject(Invoice srcObject) {
-        invoice = srcObject
-        parts   = createParts(invoice, [])
+    AbstractReader<SxrObject, SxrObject> setSrcObject(SxrObject srcObject) {
+        root  = srcObject
+        parts = createParts(root, [])
         return this
     }
 
     @Override
     Iterator<SxrObject> iterator() {
-        if(invoice == null)
+        if(root == null)
             throw new IllegalArgumentException("The Src-Object has not been set yet.")
         return parts.iterator()
     }
