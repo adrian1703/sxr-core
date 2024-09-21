@@ -38,7 +38,7 @@ class XmlUtil {
     }
 
     SxrObject parseNodeToSxrObject(Node node) {
-
+        return null
     }
 
 }
