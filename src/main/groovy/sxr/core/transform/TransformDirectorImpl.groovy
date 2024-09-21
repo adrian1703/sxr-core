@@ -8,7 +8,7 @@ class TransformDirectorImpl {
     Map<Class, List<AbstractTransformBuilder>> builderRegistry = [:]
 
 
-    transform(Class a, Class c){
+    def transform(Class a, Class c){
         lookupRegistry()
     }
 

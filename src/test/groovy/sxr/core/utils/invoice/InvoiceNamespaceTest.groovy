@@ -1,4 +1,4 @@
-package sxr.core
+package sxr.core.utils.invoice
 
 import groovy.namespace.QName
 import spock.lang.Specification

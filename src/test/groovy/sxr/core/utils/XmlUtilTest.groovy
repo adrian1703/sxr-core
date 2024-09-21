@@ -2,7 +2,7 @@ package sxr.core.utils
 
 import groovy.namespace.QName
 import spock.lang.Specification
-import sxr.core.InvoiceNamespace
+import sxr.core.utils.invoice.InvoiceNamespace
 import test.ResourcesUtil
 
 class XmlUtilTest extends Specification {
