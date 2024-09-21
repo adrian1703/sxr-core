@@ -12,4 +12,9 @@ abstract class AbstractReaderImpl<A,B> implements AbstractReader<A,B>{
         }
         return builder.getResult()
     }
+
+    AbstractReader<A,B> trySetSrcObject(Object srcObject)
+    throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Not implemented")
+    }
 }

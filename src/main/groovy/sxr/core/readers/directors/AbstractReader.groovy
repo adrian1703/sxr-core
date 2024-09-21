@@ -14,7 +14,17 @@ interface AbstractReader<A,B> extends Iterable<B>{
      * @param srcObject
      * @return this
      */
-    AbstractReader setSrcObject(A srcObject)
+    AbstractReader<A,B> setSrcObject(A srcObject)
+
+    /**
+     * If a Src-Object has different representations,
+     * the reader can implement this method to
+     * do an alternative object conversion.
+     * @param srcObject
+     * @return this
+     * @throws UnsupportedOperationException if not implemented by reader
+     */
+    AbstractReader<A,B> trySetSrcObject(Object srcObject) throws UnsupportedOperationException
 
     /**
      * This uses a TransformBuilder<B,C> to construct a new object converting A->C using B inputs
