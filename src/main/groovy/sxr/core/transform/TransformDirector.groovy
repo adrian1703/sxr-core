@@ -2,7 +2,7 @@ package sxr.core.transform
 /**
  * The Director is used for managing the builder process in the build pattern.
  */
-interface Director {
+interface TransformDirector {
     /**
      * This uses a Reader A->B and a TransformBuilder B->C to construct a new
      * object converting A->C using B inputs
