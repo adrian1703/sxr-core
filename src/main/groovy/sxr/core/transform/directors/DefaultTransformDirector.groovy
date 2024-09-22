@@ -4,7 +4,7 @@ import sxr.core.transform.Reader
 import sxr.core.transform.TransformBuilder
 import sxr.core.transform.TransformDirector
 
-//TODO: unfinished -> Handler Pattern / Chain of command delegation
+//TODO: unfinished -> Handler Pattern / Chain of command delegation maybe a handler class for that
 class DefaultTransformDirector implements TransformDirector {
 
     Map<Class, List<Reader>>           readerRegistry  = [:]
