@@ -1,8 +1,8 @@
 package sxr.core.transform.readers.invoice
 
 import spock.lang.Specification
+import sxr.core.transform.Reader
 import sxr.core.transform.readers.EntityReader
-import sxr.core.transform.readers.Reader
 import sxr.model.entities.SxrObject
 import sxr.model.entities.invoice.*
 

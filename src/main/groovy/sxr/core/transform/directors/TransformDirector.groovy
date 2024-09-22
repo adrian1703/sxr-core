@@ -1,7 +1,8 @@
-package sxr.core.transform
+package sxr.core.transform.directors
 
-import sxr.core.transform.builders.TransformBuilder
-import sxr.core.transform.readers.Reader
+import sxr.core.transform.Reader
+import sxr.core.transform.TransformBuilder
+
 //TODO: unfinished -> Handler Pattern / Chain of command delegation
 class TransformDirector extends AbstractDirector{
     Map<Class, List<Reader>> readerRegistry = [:]

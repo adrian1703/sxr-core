@@ -1,6 +1,8 @@
 package sxr.core.transform.readers
 
-abstract class ReaderImpl<A,B> implements Reader<A,B>{
+import sxr.core.transform.Reader
+
+abstract class ReaderImpl<A,B> implements Reader<A,B> {
 
     Iterator<B> tryMakeIterator(Object srcObject)
     throws UnsupportedOperationException {

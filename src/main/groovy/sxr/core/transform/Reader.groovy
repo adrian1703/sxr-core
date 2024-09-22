@@ -1,4 +1,4 @@
-package sxr.core.transform.readers
+package sxr.core.transform
 /**
  * Director class (Builder pattern) for doing an object transformation
  * @param <A> Type of the source-object the transformation is based on for the reader

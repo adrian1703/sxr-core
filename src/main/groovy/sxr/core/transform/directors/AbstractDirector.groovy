@@ -1,7 +1,8 @@
-package sxr.core.transform
+package sxr.core.transform.directors
 
-import sxr.core.transform.builders.TransformBuilder
-import sxr.core.transform.readers.Reader
+import sxr.core.transform.Director
+import sxr.core.transform.Reader
+import sxr.core.transform.TransformBuilder
 
 class AbstractDirector implements Director {
     @Override

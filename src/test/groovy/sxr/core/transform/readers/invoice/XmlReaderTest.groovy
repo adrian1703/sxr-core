@@ -2,7 +2,7 @@ package sxr.core.transform.readers.invoice
 
 import groovy.namespace.QName
 import spock.lang.Specification
-import sxr.core.transform.readers.Reader
+import sxr.core.transform.Reader
 import sxr.core.transform.readers.XmlReader
 import test.ResourcesUtil
 

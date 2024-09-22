@@ -1,8 +1,4 @@
 package sxr.core.transform
-
-import sxr.core.transform.builders.TransformBuilder
-import sxr.core.transform.readers.Reader
-
 /**
  * The Director is used for managing the builder process in the build pattern.
  */

@@ -1,4 +1,4 @@
-package sxr.core.transform.builders
+package sxr.core.transform
 
 /**
  * A builder class that iteratively constructs an object
