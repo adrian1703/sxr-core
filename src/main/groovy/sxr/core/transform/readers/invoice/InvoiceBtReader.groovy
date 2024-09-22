@@ -1,9 +1,9 @@
 package sxr.core.transform.readers.invoice
 
 
-import sxr.core.transform.readers.ReaderImpl
+import sxr.core.transform.readers.AbstractReader
 
-class InvoiceBtReader extends ReaderImpl<Map, String>{
+class InvoiceBtReader extends AbstractReader<Map, String>{
 
     @Override
     Iterator<String> makeIterator(Map srcObject) {

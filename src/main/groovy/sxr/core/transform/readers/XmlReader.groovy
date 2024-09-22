@@ -2,7 +2,7 @@ package sxr.core.transform.readers
 
 import sxr.core.utils.XmlUtil
 
-class XmlReader extends ReaderImpl<String, Node> {
+class XmlReader extends AbstractReader<String, Node> {
 
     @Override
     Iterator<Node> makeIterator(String srcObject) {

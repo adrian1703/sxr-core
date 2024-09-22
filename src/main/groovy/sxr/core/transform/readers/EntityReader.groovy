@@ -6,7 +6,7 @@ import sxr.model.entities.SxrObject
 
 import java.lang.reflect.Field
 
-class EntityReader extends ReaderImpl<SxrObject, SxrObject> {
+class EntityReader extends AbstractReader<SxrObject, SxrObject> {
 
     @Override
     Iterator<SxrObject> makeIterator(SxrObject srcObject) {
