@@ -1,16 +1,16 @@
 package sxr.core.transform.builders.invoice
 
-import sxr.core.transform.builders.AbstractTransformBuilder
+import sxr.core.transform.builders.TransformBuilder
 
-class InvoiceBt2EntityBuilder implements AbstractTransformBuilder{
+class InvoiceBt2EntityBuilder implements TransformBuilder{
 
     @Override
-    AbstractTransformBuilder init() {
+    TransformBuilder init() {
         return null
     }
 
     @Override
-    AbstractTransformBuilder add(Object toAdd) {
+    TransformBuilder add(Object toAdd) {
         return null
     }
 

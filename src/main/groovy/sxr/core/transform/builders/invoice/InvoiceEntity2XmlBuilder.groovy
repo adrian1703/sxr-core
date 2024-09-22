@@ -1,9 +1,9 @@
 package sxr.core.transform.builders.invoice
 
-import sxr.core.transform.builders.AbstractTransformBuilder
+import sxr.core.transform.builders.TransformBuilder
 import sxr.model.entities.SxrObject
 
-class InvoiceEntity2XmlBuilder implements AbstractTransformBuilder<SxrObject, Map>{
+class InvoiceEntity2XmlBuilder implements TransformBuilder<SxrObject, Map>{
     Map invoice
 
     @Override

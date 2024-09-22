@@ -6,21 +6,12 @@ import sxr.model.entities.SxrObject
 
 import java.lang.reflect.Field
 
-class EntityReader extends AbstractReaderImpl<SxrObject, SxrObject> {
-    SxrObject       root
-    List<SxrObject> parts
+class EntityReader extends ReaderImpl<SxrObject, SxrObject> {
 
     @Override
-    AbstractReader<SxrObject, SxrObject> setSrcObject(SxrObject srcObject) {
-        root  = srcObject
-        parts = createParts(root, [])
-        return this
-    }
-
-    @Override
-    Iterator<SxrObject> iterator() {
-        if(root == null)
-            throw new IllegalArgumentException("The Src-Object has not been set yet.")
+    Iterator<SxrObject> makeIterator(SxrObject srcObject) {
+        SxrObject       root  = srcObject
+        List<SxrObject> parts = createParts(root, [])
         return parts.iterator()
     }
 

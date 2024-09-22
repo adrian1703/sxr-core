@@ -1,13 +1,13 @@
 package sxr.core.transform.readers.invoice
 
 import spock.lang.Specification
-import sxr.core.transform.readers.AbstractReader
 import sxr.core.transform.readers.EntityReader
+import sxr.core.transform.readers.Reader
 import sxr.model.entities.SxrObject
 import sxr.model.entities.invoice.*
 
 class EntityReaderTest extends Specification {
-    AbstractReader<SxrObject, SxrObject> reader
+    Reader<SxrObject, SxrObject> reader
 
     void setup() {
         reader = new EntityReader()
@@ -27,8 +27,7 @@ class EntityReaderTest extends Specification {
         di.deliverParty             = dp
 
         when:
-        reader.setSrcObject(invoice)
-        Iterator<SxrObject> iterator = reader.iterator()
+        Iterator<SxrObject> iterator = reader.makeIterator(invoice)
 
         then:
         Iterator expected = [invoice, cr, di, dp].iterator()
@@ -47,8 +46,7 @@ class EntityReaderTest extends Specification {
         invoice.invoiceLine       = iLines
 
         when:
-        reader.setSrcObject(invoice)
-        Iterator<SxrObject> iterator = reader.iterator()
+        Iterator<SxrObject> iterator = reader.makeIterator(invoice)
 
         then:
         Iterator expected = [invoice, iLine1, iLine2].iterator()
@@ -76,8 +74,7 @@ class EntityReaderTest extends Specification {
         invoice.invoiceLine       = iLines
 
         when:
-        reader.setSrcObject(invoice)
-        Iterator<SxrObject> iterator = reader.iterator()
+        Iterator<SxrObject> iterator = reader.makeIterator(invoice)
 
         then:
         Iterator expected = [invoice, cr, iLine1, ip, iLine2].iterator()

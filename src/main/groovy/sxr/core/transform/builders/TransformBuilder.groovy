@@ -6,9 +6,9 @@ package sxr.core.transform.builders
  * @param <A> Type of input this builder accepts
  * @param <B> Type of the constructed object
  */
-interface AbstractTransformBuilder<B, C> {
+interface TransformBuilder<B, C> {
 
-    AbstractTransformBuilder<B,C> init()
-    AbstractTransformBuilder<B,C> add(B toAdd)
+    TransformBuilder<B,C> init()
+    TransformBuilder<B,C> add(B toAdd)
     C getResult()
 }

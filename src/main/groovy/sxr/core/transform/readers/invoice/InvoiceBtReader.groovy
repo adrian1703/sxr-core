@@ -1,16 +1,12 @@
 package sxr.core.transform.readers.invoice
 
-import sxr.core.transform.readers.AbstractReader
-import sxr.core.transform.readers.AbstractReaderImpl
 
-class InvoiceBtReader extends AbstractReaderImpl<Map, Map>{
-    @Override
-    AbstractReader setSrcObject(Map srcObject) {
-        return null
-    }
+import sxr.core.transform.readers.ReaderImpl
+
+class InvoiceBtReader extends ReaderImpl<Map, String>{
 
     @Override
-    Iterator<Map> iterator() {
+    Iterator<String> makeIterator(Map srcObject) {
         return null
     }
 }
