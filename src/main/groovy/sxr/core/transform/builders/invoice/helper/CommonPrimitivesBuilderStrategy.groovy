@@ -7,11 +7,11 @@ import java.sql.Date
 
 class CommonPrimitivesBuilderStrategy implements BuilderStrategy{
     static List<BuilderStrategy> substrategies = [
-            new TypeBasedStrategy(String.class,              {String it -> it })
-            , new TypeBasedStrategy(Boolean.class,           {String it -> Boolean.parseBoolean it })
-            , new TypeBasedStrategy(Float.class,             {String it -> Float.parseFloat it })
-            , new TypeBasedStrategy(Integer.class,           {String it -> Integer.parseInt it })
-            , new TypeBasedStrategy(java.util.Date.class,    {String it -> Date.valueOf it })
+            new TypeBasedBuilderStrategy(String.class, { String it -> it })
+            , new TypeBasedBuilderStrategy(Boolean.class, { String it -> Boolean.parseBoolean it })
+            , new TypeBasedBuilderStrategy(Float.class, { String it -> Float.parseFloat it })
+            , new TypeBasedBuilderStrategy(Integer.class, { String it -> Integer.parseInt it })
+            , new TypeBasedBuilderStrategy(java.util.Date.class, { String it -> Date.valueOf it })
 
     ]
     @Override

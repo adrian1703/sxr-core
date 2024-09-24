@@ -5,11 +5,11 @@ import sxr.model.interfaces.XmlElement
 
 import java.lang.reflect.Field
 
-class TypeBasedStrategy implements BuilderStrategy {
+class TypeBasedBuilderStrategy implements BuilderStrategy {
     private Class<?>   targetType
     private Closure<?> parseValue
 
-    TypeBasedStrategy(Class<?> targetType, Closure<?> parseValue) {
+    TypeBasedBuilderStrategy(Class<?> targetType, Closure<?> parseValue) {
         this.targetType = targetType
         this.parseValue = parseValue
     }
