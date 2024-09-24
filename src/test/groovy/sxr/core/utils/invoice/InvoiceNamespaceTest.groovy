@@ -15,7 +15,7 @@ class InvoiceNamespaceTest extends Specification {
                 , new QName("urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"    , "StartDate"    , "cbc")
         ]
         when:
-        def result = InvoiceNamespace.qNameToPrefixAndName(qNames)
+        def result = InvoiceNamespace.QNameToPrefixAndName(qNames)
         then:
         assert result[0] == "ubl:Invoice"
         assert result[1] == "cac:InvoicePeriod"

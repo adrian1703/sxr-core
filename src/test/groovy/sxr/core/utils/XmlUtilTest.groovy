@@ -11,7 +11,7 @@ class XmlUtilTest extends Specification {
         given:
         String uri = inputUri
         when:
-        String prefix = InvoiceNamespace.getPrefix(uri)
+        String prefix = InvoiceNamespace.GetPrefix(uri)
         then:
         assert prefix == expectedPrefix
 
@@ -33,7 +33,7 @@ class XmlUtilTest extends Specification {
         Node node = XmlUtil.parseTextToNode(xml)
         node = node.'**'.find { it.name() == nodeName } as Node
         List<QName> termPath     = XmlUtil.getXmlTermPath(node)
-        List<String> prefixNames = InvoiceNamespace.qNameToPrefixAndName(termPath)
+        List<String> prefixNames = InvoiceNamespace.QNameToPrefixAndName(termPath)
         then:
         assert termPath.size() == termPathExpected.size()
         assert prefixNames     == termPathExpected

@@ -9,7 +9,7 @@ class InvoiceNamespace {
     static Namespace cac = new Namespace("urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", 'cac')
     static Namespace cbc = new Namespace("urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", 'cbc')
 
-    static String getPrefix(String uri) {
+    static String GetPrefix(String uri) {
         return switch (uri) {
             case ubl.uri -> ubl.prefix
             case cac.uri -> cac.prefix
@@ -18,9 +18,13 @@ class InvoiceNamespace {
         }
     }
 
-    static List<String> qNameToPrefixAndName(List<QName> input) {
-        return input.collect(({ QName qName ->
-            return "${qName.prefix}:${qName.localPart}"
+    static List<String> QNameToPrefixAndName(List<QName> qNames) {
+        return qNames.collect(({ QName qName ->
+            return QNameToPrefixAndName(qName)
         } as Closure<String>))
+    }
+
+    static String QNameToPrefixAndName(QName qName) {
+        return "${qName.prefix}:${qName.localPart}"
     }
 }
