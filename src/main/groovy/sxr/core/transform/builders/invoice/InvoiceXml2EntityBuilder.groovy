@@ -50,6 +50,7 @@ class InvoiceXml2EntityBuilder implements TransformBuilder<Node, Invoice>{
      * @param toAdd
      * @return this
      */
+    //TODO: Handle Attributes, Enum codes
     @Override
     TransformBuilder<Node, Invoice> add(Node toAdd) {
         if (!isInit){
