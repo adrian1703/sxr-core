@@ -5,6 +5,7 @@ import sxr.model.interfaces.XmlElement
 
 import java.lang.reflect.Constructor
 import java.lang.reflect.Field
+import java.lang.reflect.Method
 
 class SxrObjectUtil {
 
@@ -31,5 +32,22 @@ class SxrObjectUtil {
         XmlElement annotation      = field.getAnnotation(XmlElement)
         Constructor constructor    = annotation.type().getConstructor()
         return constructor.newInstance() as SxrObject
+    }
+
+    static <T extends Enum<?>> T getEnumByCode(Class<T> enumClass, String code) {
+        try {
+            T[] constants = enumClass.getEnumConstants();
+            Method method = enumClass.getMethod("getCode");
+            for (T constant : constants) {
+                String constantCode = (String) method.invoke(constant);
+                if (constantCode.equals(code)) {
+                    return constant;
+                }
+            }
+        } catch (Exception e) {
+            // Handle exception
+            e.printStackTrace();
+        }
+        throw new IllegalArgumentException("Invalid code: " + code);
     }
 }

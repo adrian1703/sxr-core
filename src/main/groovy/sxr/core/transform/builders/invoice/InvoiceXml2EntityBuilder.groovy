@@ -20,7 +20,8 @@ class InvoiceXml2EntityBuilder implements TransformBuilder<Node, Invoice>{
     boolean               isInit
     List<BuilderStrategy> specificStrategies = [  new SxrObjectBuilderStrategy()
                                                 , new CollectionBuilderStrategy()
-                                                , new CommonPrimitivesBuilderStrategy()]
+                                                , new CommonPrimitivesBuilderStrategy()
+                                                , new EnumBuilderStrategy()]
     BuilderStrategy       defaultStrategy    = new DefaultBuilderStrategy()
 
     @Override
@@ -50,7 +51,7 @@ class InvoiceXml2EntityBuilder implements TransformBuilder<Node, Invoice>{
      * @param toAdd
      * @return this
      */
-    //TODO: Handle Attributes, Enum codes
+    //TODO: Handle Attributes
     @Override
     TransformBuilder<Node, Invoice> add(Node toAdd) {
         if (!isInit){
@@ -72,9 +73,7 @@ class InvoiceXml2EntityBuilder implements TransformBuilder<Node, Invoice>{
         targetFieldName = InvoiceNamespace.QNameToPrefixAndName(toAdd.name() as QName)
         targetField     = SxrObjectUtil.FindXmlElementByTerm(parent.value.sxr.class, targetFieldName)
         if (targetField == null){
-            log.warning "TargetField is null: could not find: Parent: ${parent.value.sxr.class} Field: ${toAdd.name()}"
-            return this
-//            throw new IllegalArgumentException("TargetField is null: could not find: Parent: ${parent.value.sxr.class} Field: ${toAdd.name()}")
+            throw new IllegalArgumentException("TargetField is null: could not find: Parent: ${parent.value.sxr.class} Field: ${toAdd.name()}")
         }
         builderStrategy = specificStrategies.find { it.consumes(targetField) } ?: defaultStrategy
         nextPointer     = builderStrategy.handleBuild(targetField,
