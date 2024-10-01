@@ -2,6 +2,7 @@ package sxr.core.transform.builders.invoice.helper
 
 import groovy.util.logging.Log
 import sxr.core.utils.Composite
+import sxr.model.interfaces.XmlAttribute
 import sxr.model.interfaces.XmlElement
 
 import java.lang.reflect.Field
@@ -16,7 +17,7 @@ class DefaultBuilderStrategy implements BuilderStrategy {
 
     @Override
     Composite<SxrAndNode> handleBuild(Field field, Node node, Composite<SxrAndNode> treeRoot, Composite<SxrAndNode> parentPointer) {
-        log.info "Unhandled field type ${field.getAnnotation(XmlElement).type()}"
+        log.info "Unhandled field type ${field.getAnnotation(XmlElement)?.type()} or ${field.getAnnotation(XmlAttribute)?.type()}"
         return null
     }
 }

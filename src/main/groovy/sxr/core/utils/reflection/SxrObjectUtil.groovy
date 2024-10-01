@@ -1,6 +1,7 @@
 package sxr.core.utils.reflection
 
 import sxr.model.entities.SxrObject
+import sxr.model.interfaces.XmlAttribute
 import sxr.model.interfaces.XmlElement
 
 import java.lang.reflect.Constructor
@@ -19,6 +20,16 @@ class SxrObjectUtil {
                     field.getAnnotation(XmlElement).order()
                 }.toList()
     }
+
+    static List<Field> GetAttributeFieldsOfXmlElement(Class clazz, Field parentField) {
+        String fieldName = parentField.name
+        return clazz.declaredFields
+                    .findAll { Field field ->
+                        XmlAttribute annotation = field.getAnnotation(XmlAttribute)
+                        return annotation != null && annotation.parent() == fieldName
+                    }.toList()
+    }
+
 
     static Field FindXmlElementByTerm(Class clazz, String term) {
         return clazz.declaredFields

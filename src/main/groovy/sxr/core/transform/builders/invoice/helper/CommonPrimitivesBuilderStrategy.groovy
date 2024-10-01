@@ -5,7 +5,7 @@ import sxr.core.utils.Composite
 import java.lang.reflect.Field
 import java.sql.Date
 
-class CommonPrimitivesBuilderStrategy implements BuilderStrategy{
+class CommonPrimitivesBuilderStrategy implements BuilderStrategy {
     static List<BuilderStrategy> substrategies = [
             new TypeBasedBuilderStrategy(String.class, { String it -> it })
             , new TypeBasedBuilderStrategy(Boolean.class, { String it -> Boolean.parseBoolean it })

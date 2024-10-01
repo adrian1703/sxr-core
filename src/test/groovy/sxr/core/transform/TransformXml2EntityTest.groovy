@@ -28,5 +28,6 @@ class TransformXml2EntityTest extends Specification{
         SxrObject construct = transformDirector.construct(xml, reader, builder)
         then:
         assert construct.class == Invoice.class
+        assert (construct as Invoice).seller.party.sellerElectronicAddress_schemeID == "EM"
     }
 }

@@ -62,6 +62,7 @@ class InvoiceXml2EntityBuilder implements TransformBuilder<Node, Invoice>{
         Composite<SxrAndNode> parent, nextPointer
         Closure               isTarget
         Field                 targetField
+        List<Field>           targetFieldAttributes
         String                targetFieldName
         BuilderStrategy       builderStrategy
         isTarget = { Composite<SxrAndNode> current -> current.value.node == toAdd.parent() }
@@ -80,6 +81,14 @@ class InvoiceXml2EntityBuilder implements TransformBuilder<Node, Invoice>{
                                                       toAdd,
                                                       treeRoot,
                                                       parent)
+        targetFieldAttributes = SxrObjectUtil.GetAttributeFieldsOfXmlElement(parent.value.sxr.class, targetField)
+        targetFieldAttributes.each { Field attribute ->
+            BuilderStrategy attribStrategy = specificStrategies.find { it.consumes(attribute) } ?: defaultStrategy
+            attribStrategy.handleBuild(attribute,
+                                       toAdd,
+                                       treeRoot,
+                                       parent)
+        }
         currentPointer  = nextPointer ?: currentPointer
         return this
     }

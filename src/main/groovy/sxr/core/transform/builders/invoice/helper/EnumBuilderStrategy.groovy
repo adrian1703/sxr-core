@@ -2,6 +2,7 @@ package sxr.core.transform.builders.invoice.helper
 
 import sxr.core.utils.Composite
 import sxr.core.utils.reflection.SxrObjectUtil
+import sxr.model.interfaces.XmlAttribute
 import sxr.model.interfaces.XmlElement
 
 import java.lang.reflect.Field
@@ -9,7 +10,9 @@ import java.lang.reflect.Field
 class EnumBuilderStrategy implements BuilderStrategy {
     @Override
     boolean consumes(Field field) {
-        return field.getAnnotation(XmlElement) != null && field.type.name.startsWith("sxr.model.codes.")
+        return (field.getAnnotation(XmlElement) != null && field.type.name.startsWith("sxr.model.codes."))
+                ||
+               (field.getAnnotation(XmlAttribute) != null && field.type.name.startsWith("sxr.model.codes."))
     }
 
     @Override
@@ -17,8 +20,15 @@ class EnumBuilderStrategy implements BuilderStrategy {
                                       Node node,
                                       final Composite<SxrAndNode> treeRoot,
                                       final Composite<SxrAndNode> parentPointer) {
-        Class<?> enumClass = field.getAnnotation(XmlElement).type()
-        String enumCode    = node.text()
+        Class<?> enumClass
+        String enumCode
+        if(field.getAnnotation(XmlElement) != null) {
+            enumClass = field.getAnnotation(XmlElement).type()
+            enumCode  = node.text()
+        } else {
+            enumClass = field.getAnnotation(XmlAttribute).type()
+            enumCode  = node.attribute(field.getAnnotation(XmlAttribute).term())
+        }
         def constant = SxrObjectUtil.getEnumByCode(enumClass, enumCode)
         field.set(parentPointer.value.sxr, constant)
         return null

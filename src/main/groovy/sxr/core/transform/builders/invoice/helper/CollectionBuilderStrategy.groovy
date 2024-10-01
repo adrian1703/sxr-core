@@ -12,6 +12,8 @@ class CollectionBuilderStrategy implements BuilderStrategy {
     @Override
     boolean consumes(Field field) {
         XmlElement annotation = field.getAnnotation(XmlElement)
+        if (annotation == null)
+            return false
         Class collectionType  = annotation.type()
         return List.class.isAssignableFrom(field.getType()) &&
                SxrObject.class.isAssignableFrom(collectionType)
