@@ -43,21 +43,12 @@ sourceSets {
 
 
 dependencies {
-    // Groovy dependency
     implementation 'org.apache.groovy:groovy-all:4.0.23'
 
-    //junit
-//    testImplementation platform('org.junit:junit-bom:5.10.0')
-//    testImplementation 'org.junit.jupiter:junit-jupiter'
-
-    // Spock dependencies
     testImplementation platform('org.spockframework:spock-bom:2.3-groovy-4.0')
     testImplementation 'org.spockframework:spock-core'  // Core Spock framework
-//    testImplementation 'org.spockframework:spock-junit4'  // Only needed if you're using JUnit 4 integration
-
     // Optional: If you want to use Spock's mock objects or need other advanced features, add more dependencies
     // testImplementation 'cglib:cglib:3.3.0'  // Spock uses CGLib for dynamic proxies (optional)
-
 }
 
 test {
