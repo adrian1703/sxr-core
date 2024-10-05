@@ -2,7 +2,7 @@ package sxr.core.utils
 
 import groovy.namespace.QName
 import groovy.xml.XmlParser
-import sxr.model.entities.SxrObject
+import sxr.core.model.entities.SxrObject
 
 class XmlUtil {
     static XmlUtil   Singleton

@@ -1,10 +1,10 @@
 package sxr.core.transform.readers.invoice
 
 import spock.lang.Specification
+import sxr.core.model.entities.SxrObject
 import sxr.core.transform.Reader
 import sxr.core.transform.readers.EntityReader
-import sxr.model.entities.SxrObject
-import sxr.model.entities.invoice.*
+import sxr.invoice.model.entities.*
 
 class EntityReaderTest extends Specification {
     Reader<SxrObject, SxrObject> reader

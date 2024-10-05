@@ -7,7 +7,7 @@ import sxr.core.transform.builders.invoice.helper.*
 import sxr.core.utils.Composite
 import sxr.core.utils.invoice.InvoiceNamespace
 import sxr.core.utils.reflection.SxrObjectUtil
-import sxr.model.entities.invoice.Invoice
+import sxr.invoice.model.entities.Invoice
 
 import java.lang.reflect.Field
 

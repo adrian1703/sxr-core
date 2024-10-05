@@ -1,7 +1,7 @@
 package sxr.core.transform.builders.invoice.helper
 
 import groovy.transform.TupleConstructor
-import sxr.model.entities.SxrObject
+import sxr.core.model.entities.SxrObject
 
 @TupleConstructor
 class SxrAndNode {

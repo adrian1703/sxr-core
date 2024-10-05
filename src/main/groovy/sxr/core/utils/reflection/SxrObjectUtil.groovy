@@ -1,8 +1,8 @@
 package sxr.core.utils.reflection
 
-import sxr.model.entities.SxrObject
-import sxr.model.interfaces.XmlAttribute
-import sxr.model.interfaces.XmlElement
+import sxr.core.model.entities.SxrObject
+import sxr.core.model.interfaces.XmlAttribute
+import sxr.core.model.interfaces.XmlElement
 
 import java.lang.reflect.Constructor
 import java.lang.reflect.Field

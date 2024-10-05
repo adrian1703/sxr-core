@@ -1,8 +1,8 @@
 package sxr.core.transform.builders.invoice.helper
 
+import sxr.core.model.interfaces.XmlAttribute
+import sxr.core.model.interfaces.XmlElement
 import sxr.core.utils.Composite
-import sxr.model.interfaces.XmlAttribute
-import sxr.model.interfaces.XmlElement
 
 import java.lang.reflect.Field
 

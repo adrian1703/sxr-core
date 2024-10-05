@@ -1,7 +1,7 @@
 package sxr.core.utils.reflection
 
 import spock.lang.Specification
-import sxr.model.codes.Iso3166
+import sxr.core.model.codes.Iso3166
 
 class SxrObjectUtilTest extends Specification {
 

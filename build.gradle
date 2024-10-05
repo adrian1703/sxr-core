@@ -25,7 +25,7 @@ jar {
 sourceSets {
     main {
         java {
-            srcDirs = ['src/main/groovy', 'src/main/java', 'sxr-javamodel/scr']
+            srcDirs = ['src/main/groovy', 'src/main/java', 'sxr-javamodel/src']
         }
         resources {
             srcDirs = ['src/main/resources']

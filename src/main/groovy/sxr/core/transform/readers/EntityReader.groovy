@@ -1,8 +1,7 @@
 package sxr.core.transform.readers
 
-
+import sxr.core.model.entities.SxrObject
 import sxr.core.utils.reflection.SxrObjectUtil
-import sxr.model.entities.SxrObject
 
 import java.lang.reflect.Field
 

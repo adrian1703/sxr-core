@@ -1,7 +1,7 @@
 package sxr.core.transform.builders.invoice
 
+import sxr.core.model.entities.SxrObject
 import sxr.core.transform.TransformBuilder
-import sxr.model.entities.SxrObject
 
 class InvoiceEntity2XmlBuilder implements TransformBuilder<SxrObject, Map>{
     Map invoice

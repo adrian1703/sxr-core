@@ -1,11 +1,11 @@
 package sxr.core.transform
 
 import spock.lang.Specification
+import sxr.core.model.entities.SxrObject
 import sxr.core.transform.builders.invoice.InvoiceXml2EntityBuilder
 import sxr.core.transform.directors.DefaultTransformDirector
 import sxr.core.transform.readers.XmlReader
-import sxr.model.entities.SxrObject
-import sxr.model.entities.invoice.Invoice
+import sxr.invoice.model.entities.Invoice
 import test.ResourcesUtil
 
 class TransformXml2EntityTest extends Specification{
