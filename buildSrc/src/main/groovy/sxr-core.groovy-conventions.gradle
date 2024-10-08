@@ -1,19 +1,16 @@
 plugins {
     id 'groovy'
 }
+group = 'adrian.sxr'
+version = '1.0-SNAPSHOT'
+
 java {
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
 }
-
-
-group = 'adrian.sxr'
-version = '1.0-SNAPSHOT'
-
 repositories {
     mavenCentral()
 }
-
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
@@ -21,26 +18,6 @@ tasks.withType(JavaCompile).configureEach {
 jar {
     duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
 }
-
-sourceSets {
-    main {
-        java {
-            srcDirs = ['src/main/groovy', 'src/main/java', 'sxr-javamodel/src']
-        }
-        resources {
-            srcDirs = ['src/main/resources']
-        }
-    }
-    test {
-        java {
-            srcDirs = ['src/test/groovy', 'src/test/java']
-        }
-        resources {
-            srcDirs = ['src/test/resources', 'xrechnung-testsuite/src/test']
-        }
-    }
-}
-
 
 dependencies {
     implementation 'org.apache.groovy:groovy-all:4.0.23'

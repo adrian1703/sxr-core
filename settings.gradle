@@ -1,2 +1,4 @@
 rootProject.name = 'sxr-core'
+include('transform-lib')
+include('sxr-javamodel')
 

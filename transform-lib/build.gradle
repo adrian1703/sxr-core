@@ -1,0 +1,28 @@
+plugins{
+    id 'sxr-core.groovy-conventions'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/groovy', 'src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/groovy', 'src/test/java']
+        }
+        resources {
+            srcDirs = ['src/test/resources', '../xrechnung-testsuite/src/test']
+        }
+    }
+}
+
+dependencies {
+    implementation project(':sxr-javamodel')
+}
+
+tasks.register('myCustomTask', MyCustomTask)
