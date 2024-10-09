@@ -7,26 +7,46 @@ version = '1.0-SNAPSHOT'
 java {
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
+    modularity.inferModulePath = true
 }
+
+
 repositories {
     mavenCentral()
 }
+
 tasks.withType(JavaCompile).configureEach {
+    println it.name
     options.encoding = 'UTF-8'
 }
 
-jar {
-    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+tasks.withType(GroovyCompile).configureEach { task ->
+    println task.name
+    println task.toString()
+    groovyOptions.fork = true
+    groovyOptions.forkOptions.jvmArgs.addAll([
+            '--module-path', classpath.asPath // Make Groovy use the module-path instead of classpath
+    ])
 }
-
 dependencies {
-    implementation 'org.apache.groovy:groovy-all:4.0.23'
+    implementation ('org.apache.groovy:groovy-all:4.0.23'){
+        exclude group: 'org.apache.groovy', module: 'groovydoc'
+    }
 
     testImplementation platform('org.spockframework:spock-bom:2.3-groovy-4.0')
     testImplementation 'org.spockframework:spock-core'  // Core Spock framework
     // Optional: If you want to use Spock's mock objects or need other advanced features, add more dependencies
     // testImplementation 'cglib:cglib:3.3.0'  // Spock uses CGLib for dynamic proxies (optional)
 }
+
+jar {
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+}
+
+
+
+
+
 
 test {
     useJUnitPlatform()
