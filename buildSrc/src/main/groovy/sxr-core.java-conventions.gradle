@@ -1,5 +1,5 @@
 plugins {
-    id 'groovy'
+    id 'java'
 }
 group = 'adrian.sxr'
 version = '1.0-SNAPSHOT'
@@ -13,25 +13,18 @@ java {
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
 }
 
 tasks.withType(JavaCompile).configureEach {
-    println it.name
     options.encoding = 'UTF-8'
 }
 
-tasks.withType(GroovyCompile).configureEach { task ->
-    println task.name
-    println task.toString()
-    groovyOptions.fork = true
-    groovyOptions.forkOptions.jvmArgs.addAll([
-            '--module-path', classpath.asPath // Make Groovy use the module-path instead of classpath
-    ])
-}
 dependencies {
-    implementation ('org.apache.groovy:groovy-all:4.0.23'){
-        exclude group: 'org.apache.groovy', module: 'groovydoc'
-    }
+//    implementation ('org.apache.groovy:groovy-all:4.0.23')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:2.0.20"
+    implementation "org.apache.groovy:groovy-xml:4.0.23"
 
     testImplementation platform('org.spockframework:spock-bom:2.3-groovy-4.0')
     testImplementation 'org.spockframework:spock-core'  // Core Spock framework
@@ -42,11 +35,6 @@ dependencies {
 jar {
     duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
 }
-
-
-
-
-
 
 test {
     useJUnitPlatform()

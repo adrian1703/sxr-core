@@ -1,3 +1,12 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()   // Ensures access to Gradle's central plugin repository
+        mavenCentral()
+    }
+    plugins {
+        id "org.jetbrains.kotlin.jvm" version "2.0.20"  // Specify the version here
+    }
+}
 rootProject.name = 'sxr-core'
 include('transform-lib')
 include('sxr-javamodel')

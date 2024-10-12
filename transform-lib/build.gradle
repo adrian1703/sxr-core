@@ -1,11 +1,13 @@
 plugins{
-    id 'sxr-core.groovy-conventions'
+    id 'sxr-core.java-conventions'
+    id 'org.jetbrains.kotlin.jvm' version '2.0.20'
+    id 'groovy'
 }
 
 sourceSets {
     main {
         java {
-            srcDirs = ['src/main/groovy', 'src/main/java']
+            srcDirs = ['src/main/groovy', 'src/main/java', 'src/main/kotlin', ]
         }
         resources {
             srcDirs = ['src/main/resources']
