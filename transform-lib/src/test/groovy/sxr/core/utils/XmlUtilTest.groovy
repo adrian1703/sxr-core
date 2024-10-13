@@ -6,6 +6,8 @@ import sxr.core.utils.invoice.InvoiceNamespace
 import test.ResourcesUtil
 
 class XmlUtilTest extends Specification {
+    XmlUtils xmlUtils = XmlUtilsGV.Instance()
+//    XmlUtils xmlUtils = XmlUtilsKT.INSTANCE
 
     def "getPrefix"() {
         given:
@@ -30,9 +32,9 @@ class XmlUtilTest extends Specification {
         List<String> termPathExpected = termPathExpectedInput as List<String>
         when:
         String xml = ResourcesUtil.readTextFilesFromResources(pathToTestXml)
-        Node node = XmlUtil.parseTextToNode(xml)
+        Node node = xmlUtils.parseTextToNode(xml)
         node = node.'**'.find { it.name() == nodeName } as Node
-        List<QName> termPath     = XmlUtil.getXmlTermPath(node)
+        List<QName> termPath     = xmlUtils.getXmlTermPath(node)
         List<String> prefixNames = InvoiceNamespace.QNameToPrefixAndName(termPath)
         then:
         assert termPath.size() == termPathExpected.size()
